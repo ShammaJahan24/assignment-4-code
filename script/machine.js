@@ -19,12 +19,21 @@ function setInterviewTotal(value){
 
 
 function getRejectedTotal(){
-    const rejTotalJob = document.getElementById("rej-total");
+    const rejTotalJob = document.getElementById("reject-count");
     const rejTotal = rejTotalJob.innerText;
-    console.log("total job" , Number(rejTotal));
+    console.log("total rejected job" , Number(rejTotal));
     return Number(rejTotal);
 }
+function setRejectedTotal(value){
+    const rejTotalJob = document.getElementById("reject-count");
+    rejTotalJob.innerText = value;
+}
 
+
+function updateJobCount(current, total) {
+  const jobSpan = document.querySelector("#available-jobs");
+  jobSpan.innerText = `${current} of ${total} `;
+}
 
 
 

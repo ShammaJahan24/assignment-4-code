@@ -1,30 +1,23 @@
 const btns = document.getElementsByClassName("first-int-btn ");
+
 for (let btn of btns) {
   btn.addEventListener("click", function () {
     const current = getInterviewTotal();
-    const newIntCount = current + 1;
-    console.log(newIntCount);
-    setInterviewTotal(newIntCount);
+    const newIntCurrent = current + 1;
+    // current = newIntCurrent;
+    setInterviewTotal(newIntCurrent);
 
-    // find this card->find hidden button inside THIS card
-    const card = this.closest(".bg-white");
+    const card = this.closest(".job-card");
+    card.dataset.status = "interview";
+
+    // show interview label
     const hiddenBtn = card.querySelector(".hidden-int-btn");
     hiddenBtn.classList.remove("hidden");
+
+
     this.disabled = true;
+
+    const rejectBtn = card.querySelector(".rejected-btn");
+    rejectBtn.disabled = false;
   });
 }
-
-// document.getElementById("first-int-btn").addEventListener("click", function () {
-//     console.log("int clicked");
-
-//     // const intCount = document.getElementById("interview-count");
-//     // const current = Number(intCount.innerText) ;
-
-//     const current = getInterviewTotal();
-//     const newIntCount = current + 1 ;
-//     console.log(newIntCount);
-
-//     this.disabled=true;
-//     setInterviewTotal(newIntCount);
-
-//   });

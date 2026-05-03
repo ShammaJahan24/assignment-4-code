@@ -54,19 +54,19 @@
           <h3 class="pb-6 text-[26px] font-bold">Available jobs</h3>
           <div class="flex gap-4">
             <button
-              id="all-btn"
+              id="all-portal"
               class="btn text-opacity-55 py-[10px] px-8 hover:bg-blue-700 hover:text-white bg-white"
             >
               All
             </button>
             <button
-              id="interview-btn"
+              id="interview-portal"
               class="btn py-[10px] px-4 hover:bg-blue-700 hover:text-white bg-white"
             >
               Interview
             </button>
             <button
-              id="rejected-btn"
+              id="rejected-portal"
               class="btn px-4 hover:bg-blue-700 hover:text-white bg-white"
             >
               Rejected
@@ -74,7 +74,7 @@
           </div>
         </div>
         <p class="text-[#64748B] text-xl">
-          <span class="available-jobs">8 </span>jobs
+          <span id="available-jobs">8 </span>jobs
         </p>
       </div>
     </section>
@@ -82,8 +82,10 @@
     <!-- cards  -->
 
     <section id="job-cards" class="max-w-[1110px] mx-auto">
-      <div>
-        <div class="bg-white rounded-lg p-6 mb-4">
+
+      <div> 
+
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">Mobile First Corp</h3>
             <p class="text-[#64748B] text-xl">React Native Developer</p>
@@ -93,7 +95,7 @@
           </p>
           <div class="pb-5">
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               Build cross-platform mobile applications using React Native. Work
               on products used by millions of users worldwide.
@@ -101,7 +103,6 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-              
               class="first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
@@ -114,7 +115,7 @@
           </div>
         </div>
 
-        <div class="bg-white rounded-lg p-6 mb-4">
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">WebFlow Agency</h3>
             <p class="text-[#64748B] text-xl">Web Designer & Developer</p>
@@ -125,7 +126,7 @@
           <div class="pb-5">
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
 
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               Create stunning web experiences for high-profile clients. Must
               have portfolio and experience with modern web design trends.
@@ -133,18 +134,17 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-             
               class="first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
             </button>
-            <button class="btn btn-outline btn-error py-2 px-3 text-xl">
+            <button class="rejected-btn btn btn-outline btn-error py-2 px-3 text-xl">
               Rejected
             </button>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg p-6 mb-4">
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">DataViz Solutions</h3>
             <p class="text-[#64748B] text-xl">Data Visualization Specialist</p>
@@ -155,7 +155,7 @@
           <div class="pb-5">
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
 
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               Transform complex data into compelling visualizations. Required
               skills: D3.js, React, and strong analytical thinking.
@@ -163,29 +163,28 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-              
               class="first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
             </button>
-            <button class="btn btn-outline btn-error py-2 px-3 text-xl">
+            <button class="rejected-btn btn btn-outline btn-error py-2 px-3 text-xl">
               Rejected
             </button>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg p-6 mb-4">
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">Innovation Labs</h3>
             <p class="text-[#64748B] text-xl">UI/UX Engineer</p>
           </div>
           <p class="pb-5 text-[#64748B] text-xl">
-            Austin, TX • Full-time • $110,000 - $150,000
+            Seattle, WA • Full-time • $140,000 - $190,000
           </p>
           <div class="pb-5">
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
 
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               Create beautiful and functional user interfaces for our suite of
               products. Strong design skills and frontend development expertise
@@ -194,18 +193,17 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-         
-              class="btn btn-outline btn-success py-2 px-3 text-xl"
+              class="first-int-btn first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
             </button>
-            <button class="btn btn-outline btn-error py-2 px-3 text-xl">
+            <button class="rejected-btn btn btn-outline btn-error py-2 px-3 text-xl">
               Rejected
             </button>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg p-6 mb-4">
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">MegaCorp Solutions</h3>
             <p class="text-[#64748B] text-xl">JavaScript Developer</p>
@@ -216,7 +214,7 @@
           <div class="pb-5">
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
 
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               Build enterprise applications with JavaScript and modern
               frameworks. We offer competitive compensation, health insurance,
@@ -225,18 +223,17 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-
-              class="btn btn-outline btn-success py-2 px-3 text-xl"
+              class="first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
             </button>
-            <button class="btn btn-outline btn-error py-2 px-3 text-xl">
+            <button class="rejected-btn btn btn-outline btn-error py-2 px-3 text-xl">
               Rejected
             </button>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg p-6 mb-4">
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">CloudFirst Inc</h3>
             <p class="text-[#64748B] text-xl">Backend Developer</p>
@@ -247,7 +244,7 @@
           <div class="pb-5">
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
 
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               Design and maintain scalable backend systems using Python and AWS.
               Work with modern DevOps practices and cloud infrastructure.
@@ -255,18 +252,19 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-
               class="first-int-btn first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
             </button>
-            <button class="btn btn-outline btn-error py-2 px-3 text-xl">
+            <button
+              class="rejected-btn btn btn-outline btn-error py-2 px-3 text-xl"
+            >
               Rejected
             </button>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg p-6 mb-4">
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">StartupXYZ</h3>
             <p class="text-[#64748B] text-xl">Full Stack Engineer</p>
@@ -277,7 +275,7 @@
           <div class="pb-5">
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
 
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               Join our fast-growing startup and work on our core platform.
               Experience with Node.js and React required. Great benefits and
@@ -286,18 +284,19 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-
               class="first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
             </button>
-            <button class="btn btn-outline btn-error py-2 px-3 text-xl">
+            <button
+              class="rejected-btn btn btn-outline btn-error py-2 px-3 text-xl"
+            >
               Rejected
             </button>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg p-6">
+        <div class="bg-white job-card rounded-lg p-6 mb-4" data-status="none">
           <div class="pb-5">
             <h3 class="pb-1 text-[26px] font-bold">TechCorp Industries</h3>
             <p class="text-[#64748B] text-xl">Senior Frontend Developer</p>
@@ -305,10 +304,11 @@
           <p class="pb-5 text-[#64748B] text-xl">
             San Francisco, CA • Full-time • $130,000 - $175,000
           </p>
-          <div class="pb-5">`
+          <div class="pb-5">
+            `
             <button id="" class="hidden-int-btn btn hidden">Interview</button>
 
-            <button class="btn hidden">Rejected</button>
+            <button class="hidden-rejected-btn btn hidden">Rejected</button>
             <p class="pt-1 text-[#64748B] text-xl">
               We are looking for an experienced Frontend Developer to build
               scalable web applications using React and TypeScript. You will
@@ -317,17 +317,18 @@
           </div>
           <div class="pt-5 flex gap-2">
             <button
-
               class="first-int-btn btn btn-outline btn-success py-2 px-3 text-xl"
             >
               Interview
             </button>
-            <button class="btn btn-outline btn-error py-2 px-3 text-xl">
+            <button class="rejected-btn btn btn-outline btn-error py-2 px-3 text-xl">
               Rejected
             </button>
           </div>
         </div>
-      </div>
+    
+    </div>
+
     </section>
 
     <section id="empty" class="max-w-[1110px] mx-auto pb-[133px] hidden">
@@ -345,6 +346,9 @@
     <script src="script/all.js"></script>
     <script src="script/machine.js"></script>
     <script src="script/interview.js"></script>
+    <script src="script/interviewPortal.js"></script>
+    <script src="script/rejected.js"></script>
+    <script src="script/rejectedPortal.js"></script>
 
     <!--<script src="script/rejected.js"></script> -->
   </body>
