@@ -2,24 +2,24 @@ const btns = document.getElementsByClassName("first-int-btn");
 
 for (let btn of btns) {
   btn.addEventListener("click", function () {
-    const current = getInterviewTotal();
-    const newIntCurrent = current + 1;
-    // current = newIntCurrent;
-    setInterviewTotal(newIntCurrent);
-
     const card = this.closest(".job-card");
+
+    if (card.dataset.status === "interview") {
+      return;
+    }
+
+    if (card.dataset.status === "rejected") {
+      setRejectedTotal(getRejectedTotal() - 1);
+    }
+
+    setInterviewTotal(getInterviewTotal() + 1);
+
     card.dataset.status = "interview";
 
-    // show interview label
-    const hiddenBtn = card.querySelector(".hidden-int-btn");
-    hiddenBtn.classList.remove("hidden");
-
-    const rejectedBtnHide = card.querySelector(".hidden-rejected-btn");
-    rejectedBtnHide.classList.add("hidden");
+    card.querySelector(".hidden-int-btn").classList.remove("hidden");
+    card.querySelector(".hidden-rejected-btn").classList.add("hidden");
 
     this.disabled = true;
-
-    const rejectBtn = card.querySelector(".rejected-btn");
-    rejectBtn.disabled = false;
+    card.querySelector(".rejected-btn").disabled = false;
   });
 }

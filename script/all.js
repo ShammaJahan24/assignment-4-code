@@ -1,5 +1,4 @@
 document.getElementById("all-portal").addEventListener("click", function () {
-  
   const cards = document.querySelectorAll(".job-card");
   const empty = document.getElementById("empty");
 
@@ -8,6 +7,5 @@ document.getElementById("all-portal").addEventListener("click", function () {
   });
 
   resetJobCount();
-
   empty.classList.add("hidden");
 });

@@ -2,18 +2,16 @@ const rejectedBtns = document.getElementsByClassName("rejected-btn");
 
 for (let btn of rejectedBtns) {
   btn.addEventListener("click", function () {
-
     const card = this.closest(".job-card");
-    if (card.dataset.status === "rejected") return;
 
-
+    if (card.dataset.status === "rejected") {
+      return;
+    }
     if (card.dataset.status === "interview") {
-      const currentInt = getInterviewTotal();
-      setInterviewTotal(currentInt - 1);
+      setInterviewTotal(getInterviewTotal() - 1);
     }
 
-    const currentRej = getRejectedTotal();
-    setRejectedTotal(currentRej + 1);
+    setRejectedTotal(getRejectedTotal() + 1);
 
     card.dataset.status = "rejected";
 
