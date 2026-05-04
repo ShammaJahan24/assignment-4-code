@@ -1,4 +1,4 @@
-const btns = document.getElementsByClassName("first-int-btn ");
+const btns = document.getElementsByClassName("first-int-btn");
 
 for (let btn of btns) {
   btn.addEventListener("click", function () {
@@ -14,6 +14,8 @@ for (let btn of btns) {
     const hiddenBtn = card.querySelector(".hidden-int-btn");
     hiddenBtn.classList.remove("hidden");
 
+    const rejectedBtnHide = card.querySelector(".hidden-rejected-btn");
+    rejectedBtnHide.classList.add("hidden");
 
     this.disabled = true;
 

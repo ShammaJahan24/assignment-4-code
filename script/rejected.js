@@ -2,29 +2,25 @@ const rejectedBtns = document.getElementsByClassName("rejected-btn");
 
 for (let btn of rejectedBtns) {
   btn.addEventListener("click", function () {
-    const current = getRejectedTotal();
-    const newRejectedCount = current + 1;
-    setRejectedTotal(newRejectedCount);
 
-    const current2 = getInterviewTotal();
-    
-    const newIntCurrent2 = current2 - 1;
-    setInterviewTotal(newIntCurrent2);
+    const card = this.closest(".job-card");
+    if (card.dataset.status === "rejected") return;
 
-    // find THIS card
-    const card = this.closest(".bg-white");
 
-    // mark status for filtering
+    if (card.dataset.status === "interview") {
+      const currentInt = getInterviewTotal();
+      setInterviewTotal(currentInt - 1);
+    }
+
+    const currentRej = getRejectedTotal();
+    setRejectedTotal(currentRej + 1);
+
     card.dataset.status = "rejected";
-    const hiddenBtn = card.querySelector(".hidden-rejected-btn");
-    hiddenBtn.classList.remove("hidden");
-    // show hidden rejected label inside card (if you want)
-    const interviewLabel = card.querySelector(".hidden-int-btn");
 
-    interviewLabel.classList.add("hidden");
+    card.querySelector(".hidden-rejected-btn").classList.remove("hidden");
+    card.querySelector(".hidden-int-btn").classList.add("hidden");
+
     this.disabled = true;
-    const interviewBtn = card.querySelector(".first-int-btn");
-
-    interviewBtn.disabled = false;
+    card.querySelector(".first-int-btn").disabled = true;
   });
 }

@@ -1,23 +1,25 @@
-document.getElementById("interview-portal").addEventListener("click", function () {
+document
+  .getElementById("interview-portal")
+  .addEventListener("click", function () {
+    const cards = document.querySelectorAll(".job-card");
+    const empty = document.getElementById("empty");
 
-  const cards = document.querySelectorAll(".job-card");
-  const empty = document.getElementById("empty");
+    let count = 0;
 
-  let found = false;
+    cards.forEach((card) => {
+      if (card.dataset.status === "interview") {
+        card.style.display = "block";
+        count++;
+      } else {
+        card.style.display = "none";
+      }
+    });
 
-  cards.forEach(card => {
-    if (card.dataset.status === "interview") {
-      card.style.display = "block";
-      found = true;
+    updateJobCount(count);
+
+    if (count === 0) {
+      empty.classList.remove("hidden");
     } else {
-      card.style.display = "none";
+      empty.classList.add("hidden");
     }
   });
-
-  // show empty section ONLY once
-  if (!found) {
-    empty.classList.remove("hidden");
-  } else {
-    empty.classList.add("hidden");
-  }
-});
